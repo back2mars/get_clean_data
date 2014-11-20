@@ -14,7 +14,7 @@ subject_set <- rbind(subject_train, subject_test)
 
 # Extracts only the measurements on the mean and standard deviation for each measurement.
 features <- read.table("features.txt")
-mean_std <- grep("-(mean|std)\\(\\)", features[, 2])
+mean_std <- grep("(-mean\\(\\)|-std\\(\\))", features[, 2])
 x_set <- x_set[, mean_std]
 names(x_set) <- features[mean_std, 2]
 
